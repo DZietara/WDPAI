@@ -3,12 +3,12 @@
 require_once 'AppController.php';
 
 class DashboardController extends AppController {
-
+ 
     public function index()
     {
-        $this->render("dashboard");
+        $this->render("login");
     }
-    
+
     public function dashboard() {
         // TODO return and render display.html
         $hello = 'Welcome on Dahboard page!';
