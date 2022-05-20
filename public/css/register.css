@@ -27,7 +27,7 @@ body {
     width: 60%;
 }
 
-.login-container {
+.register-container {
     background-color: white;
     width: 50%;
     height: 100vh;
@@ -59,7 +59,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 40vh;
+    height: 50vh;
     width: 60%;
     margin-top: 4%;
 }
@@ -82,7 +82,7 @@ input::placeholder {
     font-weight: bold;
 } 
 
-#login-button {
+#register-button {
     background-color: #3067E6;
     height: 5.5vh;
     border: 1px solid black;
@@ -95,19 +95,20 @@ input::placeholder {
     transition: background-color 0.5s;
 }
 
-#login-button:hover {
+#register-button:hover {
     background-color: white;
     color: #3067E6;
 }
 
-#signup {
+#login {
     color: black;
     font-size: 0.55em;
     margin-top: 1vh;
 }
 
-#signup a:hover, a:visited, a:link, a:active {
+#login a:hover, a:visited, a:link, a:active {
     text-decoration: none;
     color: #3067E6;
     font-weight: bold;
 }
+
