@@ -1,7 +1,6 @@
 <?php
 
-require_once __DIR__.'/controllers/DashboardController.php';
-require_once __DIR__.'/controllers/ProjectsController.php';
+require_once __DIR__.'/controllers/DefaultController.php';
 
 class Router {
 
@@ -12,17 +11,8 @@ class Router {
         self::$routes[$url] = $view;
     }
 
-    static public function run(string $path) {
-       
-        // if($path === 'dashboard') {
-        //     $object = new DashboardController;
-        //     $object->$path();
-        // }
-
-        // projects         projects
-        // projects/456     projects    456
-
-        $urlParts = explode("/", $path);
+    static public function run(string $url) {
+        $urlParts = explode("/", $url);
         $action = $urlParts[0];
 
         if (!array_key_exists($action, self::$routes)) {

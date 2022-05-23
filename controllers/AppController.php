@@ -2,18 +2,19 @@
 
 class AppController {
 
-    public function render(string $filename = 'index', array $variables = []) {
-       $filepath = 'public/views/'.$filename.'.html';
-       $output = "Page not found.";
+    public function render(string $template = 'index', array $variables = []) {
+        $templatePath = 'public/views/'.$template.'.html';
+        $output = "Page not found";
 
-       if(file_exists($filepath)) {
+       if(file_exists($templatePath)) {
 
             extract($variables);
             
             ob_start();
-            include $filepath;
+            include $templatePath;
             $output = ob_get_clean();
        }
+
        print $output;
     }
 }
