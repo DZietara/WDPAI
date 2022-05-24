@@ -1,66 +1,95 @@
-h1 {
-    font-size: 3em;
-}
-
-div {
-    font-size: 2em;
-}
-
 body {
+    background-color: #3067E6;
+    font-family: 'Open Sans', sans-serif;
+    font-size: calc(16px + 1vw);
+    line-height: calc(1.1em + 0.5vw);
     margin: 0;
-    margin-top: 5em;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    padding: 0;
+}
+
+.base-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
 }
 
 nav {
-    background-color: white;
-    border-bottom: 1px solid black;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    width: 20%;
+    height: 100%;
+    background-color: #3067E6;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.logo-container {
+    width: 100%;
+    height: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3em;
-    padding: 0.5em 0;
 }
 
-nav>i {
-    margin: 0 0.5em;
+.logo {
+    width: 70%;
+    margin: 2em auto;
 }
 
-.sidebar-container {
-    background-color: gainsboro;
-}
-
-.album-container,
-.sidebar-container {
-    width: calc(100% - 2em);
-    height: 100vh;
-    padding: 1em;
-}
-
-.album-container {
-    height: 100vh;
-    padding: 0.5em;
+.user-container {
+    width: 100%;
+    height: 25%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
 }
 
-.album {
-    width: 200px;
-    height: 200px;
-    border-radius: 1em;
-    border: 1px solid black;
+.user {
+    width: 30%;
 }
 
-@media only screen and (max-device-width: 390px) {
-    body {
-        background-color: blue;
-        font-size: 10px;
-    }
+#username {
+    color: white;
+    font-size: 0.7em;
+}
+
+.menu-list {
+    width:100%;
+    height:60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    line-height: 1.5em;
+    color: white;
+    font-size: 0.65em;
+}
+
+ul {
+    list-style-type: none;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+li {
+    margin-top: 5%;
+}
+
+li:last-child {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 3%;
+}
+
+main {
+    width: 80%;
+    height: 100vh;
+    background-color: white; /* TO DO: zmienić tło na trochę ciemniejsze jak w adobe xd */
+    border-radius: 40px 0px 0px 40px;
 }

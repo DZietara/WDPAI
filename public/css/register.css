@@ -71,7 +71,7 @@ input {
     border-radius: 7px;
     margin: 1.5%;
     width: 80%;
-    text-indent: 2vw;
+    text-indent: 1.5vw;
     font-size: 0.5em;
     color: black;
     opacity: 50%;
@@ -79,7 +79,7 @@ input {
 }
 
 input::placeholder {          
-    font-weight: bold;
+    font-weight: 400;
 } 
 
 #register-button {
@@ -91,13 +91,11 @@ input::placeholder {
     width: 81%;
     color: white;
     font-size: 0.55em;
-    font-weight: 600;
     transition: background-color 0.5s;
 }
 
 #register-button:hover {
-    background-color: white;
-    color: #3067E6;
+    background-color: #2148A1;
 }
 
 #login {
@@ -106,10 +104,14 @@ input::placeholder {
     margin-top: 1vh;
 }
 
-#login a:hover, a:visited, a:link, a:active {
+#login a:visited, a:link, a:active {
     text-decoration: none;
     color: #3067E6;
     font-weight: bold;
+}
+
+#login a:hover {
+    color: #2148A1;
 }
 
 @media only screen and (max-device-width: 600px) {
@@ -160,20 +162,7 @@ input::placeholder {
 
     input {
         text-indent: 5vw;
-        font-weight: 400;
-    }
-
-    input::placeholder {
-        font-weight: 400;
-    }
-
-    #register-button {
-        font-weight: 400;
-    }
-
-    #register-button:hover {
-        background-color: #3067E6;
-        color: white;
+        font-weight: bold;
     }
 
     #login{

@@ -7,7 +7,6 @@ class AppController {
         $output = "Page not found";
 
        if(file_exists($templatePath)) {
-
             extract($variables);
             
             ob_start();
