@@ -1,6 +1,6 @@
 body {
     background-color: #3067E6;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: calc(16px + 1vw);
     line-height: calc(1.1em + 0.5vw);
     margin: 0;
@@ -89,7 +89,90 @@ li:last-child {
 
 main {
     width: 80%;
-    height: 100vh;
-    background-color: white; /* TO DO: zmienić tło na trochę ciemniejsze jak w adobe xd */
+    height: 100%;
+    background-color: #FBFCFF; /*  lub #ededee */
     border-radius: 40px 0px 0px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    height: 20%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 4%;
+
+}
+
+.title {
+    color: #0C1192;
+    font-size: 1.6em;
+    font-weight: 800;
+}
+
+.add-flashcard {
+    background-color: #3067E6;
+    height: 5.5vh;
+    border: 1px solid #707070;
+    border-radius: 7px;
+    margin: 1.5%;
+    width: 30%;
+    color: white;
+    font-size: 0.50em;
+    transition: background-color 0.5s;
+}
+
+.add-flashcard:hover {
+    background-color: #2148A1;
+}
+
+section {
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5em;
+    margin: 0 auto;
+    padding: 0;
+    overflow: auto;
+}
+
+section::-webkit-scrollbar {
+    display: none; /* hide scrollbar */
+}
+
+.flashcard {
+    height: 20vh;
+    width: 90%;
+    border: 1px solid black;
+    color: black;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 15px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.4s;
+    
+}
+
+.flashcard-category {
+    margin-left: 10%;
+    margin-top: 4%;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.category-terms {
+    margin-left: 10%;
+    font-size: 0.6em;
+    margin-top: -6%;
+}
+
+.flashcard:hover {
+    box-shadow: rgba(0, 0, 0, 0.65) 0px 5px 18px;
 }
