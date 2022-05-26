@@ -23,7 +23,7 @@
             </div>
             <form method="POST" action="/register">
                 <input name="email" type="text" placeholder="Email Address">
-                <input name="login" type="text" placeholder="Login">
+                <input name="name" type="text" placeholder="Name">
                 <input name="password" type="password" placeholder="Password">
                 <input name="password" type="password" placeholder="Repeat Password">
                 <button id="register-button" type="submit">Register</button>
