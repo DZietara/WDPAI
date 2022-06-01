@@ -23,7 +23,30 @@ class UserRepository extends Repository
         return new User(
             $user['email'],
             $user['name'],
+            $user['surname'],
             $user['password']
         );
+    }
+
+    public function addUser(User $user)
+    {
+        $stmt = $this->database->connect()->prepare('
+            INSERT INTO public.users (name, surname, email, password) 
+            VALUES (:name, :surname, :email, :password)
+        ');
+
+        $email = $user->getEmail();
+        $name = $user->getName();
+        $surname = $user->getSurname();
+        $password = $user->getPassword();
+
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':surname', $surname);
+        $stmt->bindParam(':password', $password);
+        $stmt->execute();
+
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $data['id'];
     }
 }

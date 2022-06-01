@@ -21,13 +21,22 @@
                 <span id="hello">Hello!</span>
                 <span id="hello2">Sign up to Get Started</span>
             </div>
-            <form method="POST" action="/register">
+            <form method="POST" action="register">
                 <input name="email" type="text" placeholder="Email Address">
                 <input name="name" type="text" placeholder="Name">
+                <input name="surname" type="text" placeholder="Surname">
                 <input name="password" type="password" placeholder="Password">
-                <input name="password" type="password" placeholder="Repeat Password">
+                <input name="confirmedPassword" type="password" placeholder="Confirm Password">
                 <button id="register-button" type="submit">Register</button>
                 <span id="login">Have an account? <a href="/login">Log in</a></span>
+                <div class="messages">
+                    <?php if(isset($messages)) {
+                        foreach ($messages as $message){
+                            echo $message;
+                        }
+                    }
+                    ?>
+                </div>
             </form>
                 
         </div>

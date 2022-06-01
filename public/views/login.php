@@ -21,6 +21,10 @@
                 <span id="hello">Log in</span>
             </div>
             <form method="POST" action="login">
+                <input name="email" type="text" placeholder="Email Address">
+                <input name="password" type="password" placeholder="Password">
+                <button id="login-button" type="submit">Log In</button>
+                <span id="signup">Don't have an account? <a href="/register">Sign up</a></span>
                 <div class="messages">
                     <?php if(isset($messages)) {
                         foreach ($messages as $message){
@@ -29,10 +33,6 @@
                     }
                     ?>
                 </div>
-                <input name="email" type="text" placeholder="Email Address">
-                <input name="password" type="password" placeholder="Password">
-                <button id="login-button" type="submit">Log In</button>
-                <span id="signup">Don't have an account? <a href="/register">Sign up</a></span>
             </form>
                 
         </div>

@@ -8,10 +8,4 @@ class DefaultController extends AppController {
     {
         $this->render("index");
     }
-
-    public function register()
-    {
-        $this->render("register");
-    }
-
 }
