@@ -59,6 +59,15 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 60vh;
+    width: 60%;
+    margin-top: 4%;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 40vh;
     width: 60%;
     margin-top: 4%;
@@ -98,19 +107,19 @@ input::placeholder {
     background-color: #2148A1;
 }
 
-#signup {
+#bottom-text {
     color: black;
     font-size: 0.55em;
     margin-top: 1vh;
 }
 
-#signup a:visited, a:link, a:active {
+#bottom-text a:visited, a:link, a:active {
     text-decoration: none;
     color: #3067E6;
     font-weight: bold;
 }
 
-#signup a:hover {
+#bottom-text a:hover {
     color: #2148A1;
 }
 
@@ -150,10 +159,17 @@ input::placeholder {
     }
     
     #hello2 {
-        font-size: 0.6em;
+        font-size: 0.5em;
+        margin-top: 2%;
     }
 
     form {
+        width: 100%;
+        height: 50vh;
+        margin-top: 10%;
+    }
+
+    #login-form {
         width: 100%;
         height: 40vh;
         margin-top: 10%;
@@ -164,13 +180,13 @@ input::placeholder {
         font-weight: bold;
     }
 
-    #signup {
+    #bottom-text {
         color: black;
         font-size: 0.5em;
         margin-top: 1.5vh;
     }
 
-    #signup a:hover, a:visited, a:link, a:active {
+    #bottom-text a:hover, a:visited, a:link, a:active {
         text-decoration: none;
         color: #3067E6;
         font-weight: bold;

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="public/css/register.css">
+    <link rel="stylesheet" type="text/css" href="public/css/login.css">
     <title>register</title>
 </head>
 
@@ -16,7 +16,7 @@
             <img class="logo" src="public/img/logo.svg">
         </div>
         
-        <div class="register-container">
+        <div class="login-container">
             <div class="message">
                 <span id="hello">Hello!</span>
                 <span id="hello2">Sign up to Get Started</span>
@@ -27,8 +27,8 @@
                 <input name="surname" type="text" placeholder="Surname">
                 <input name="password" type="password" placeholder="Password">
                 <input name="confirmedPassword" type="password" placeholder="Confirm Password">
-                <button id="register-button" type="submit">Register</button>
-                <span id="login">Have an account? <a href="/login">Log in</a></span>
+                <button id="login-button" type="submit">Register</button>
+                <span id="bottom-text">Have an account? <a href="/login">Log in</a></span>
                 <div class="messages">
                     <?php if(isset($messages)) {
                         foreach ($messages as $message){
