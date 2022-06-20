@@ -1,6 +1,7 @@
 <?php
 
-class AppController {
+class AppController
+{
 
     private $request;
 
@@ -19,18 +20,24 @@ class AppController {
         return $this->request === "POST";
     }
 
-    public function render(string $template = null, array $variables = []) {
-        $templatePath = 'public/views/'.$template.'.php';
-        $output = "Page not found";
+    public function render(string $template = null, array $variables = [])
+    {
+        session_start();
 
-        if(file_exists($templatePath)) {
-            extract($variables);
+        if ($_SESSION['loggedin'] || $template == 'login' || $template == 'register') {
+            $templatePath = 'public/views/' . $template . '.php';
+            $output = "Page not found";
 
-            ob_start();
-            include $templatePath;
-            $output = ob_get_clean();
+            if (file_exists($templatePath)) {
+                extract($variables);
+
+                ob_start();
+                include $templatePath;
+                $output = ob_get_clean();
+            }
+            print $output;
+        } else {
+            echo "Log in to view this page";
         }
-
-        print $output;
     }
 }

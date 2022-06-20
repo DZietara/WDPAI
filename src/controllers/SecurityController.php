@@ -15,12 +15,13 @@ class SecurityController extends AppController
 
     public function login()
     {
+        session_start();
         if (!$this->isPost()) {
+            session_destroy();
             return $this->render('login');
         }
 
         $email = $_POST["email"];
-        //$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
         $user = $this->userRepository->getUser($email);
 
         if (!$user) {
@@ -35,13 +36,29 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
+        $_SESSION['loggedin'] = true;
+        $_SESSION['name'] = $user->getName()." ".$user->getSurname();
+
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/index");
+        header("Location: {$url}/flashcards");
+    }
+
+    public function logout() {
+        $url = "http://$_SERVER[HTTP_HOST]";
+        if (!$this->isGet()) {
+            header("Location: {$url}/login");
+            return;
+        }
+        session_start();
+        session_destroy();
+        header("Location: {$url}/login");
     }
 
     public function register()
     {
+        session_start();
         if (!$this->isPost()) {
+            session_destroy();
             return $this->render('register');
         }
 

@@ -1,6 +1,7 @@
 <?php
 
 class User {
+    private $id;
     private $email;
     private $name;
     private $surname;
@@ -52,5 +53,10 @@ class User {
     public function setPassword(string $password)
     {
         $this->password = $password;
+    }
+
+    public function getId(): string
+    {
+        return $this->id;
     }
 }

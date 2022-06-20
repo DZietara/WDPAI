@@ -17,20 +17,20 @@
             </div>
             <div class="user-container">
                 <img class="user" src="public/img/user.png">
-                <span id="username">Damian Zietara</span>
+                <span id="username"><?php echo $_SESSION["name"]; ?></span>
             </div>
             <ul class="menu-list">
                 <li>
-                    <a href="#">Flashcards</a>
+                    <a href="/flashcards">Flashcards</a>
                 </li>
                 <li>
-                    <a href="#">Learn</a>
+                    <a href="/learn">Learn</a>
                 </li>
                 <li>
-                    <a href="#">Settings</a>
+                    <a href="/settings">Settings</a>
                 </li>
                 <li>
-                    <a href="/login">Logout</a>
+                    <a href="/logout">Logout</a>
                 </li>
             </ul>
         </nav>

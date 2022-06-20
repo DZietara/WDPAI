@@ -4,8 +4,21 @@ require_once 'AppController.php';
 
 class DefaultController extends AppController {
 
-    public function index()
+    public function flashcards()
     {
-        $this->render("index");
+        session_start();
+        $this->render("flashcards");
+    }
+
+    public function learn()
+    {
+        session_start();
+        $this->render("learn");
+    }
+
+    public function settings()
+    {
+        session_start();
+        $this->render("settings");
     }
 }
