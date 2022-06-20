@@ -49,4 +49,10 @@ class UserRepository extends Repository
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
         return $data['id'];
     }
+
+    public function existUserByEmail(string $email): bool {
+        if($this->getUser($email) != null)
+            return true;
+        return false;
+    }
 }

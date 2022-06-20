@@ -26,14 +26,15 @@ class SecurityController extends AppController
 
         if (!$user) {
             return $this->render('login', ['messages' => ['User not exist!']]);
-        }
-
-        if ($user->getEmail() !== $email) {
+        } else if ($user->getEmail() !== $email) {
             return $this->render('login', ['messages' => ['User with this email not exist!']]);
-        }
-
-        if (!password_verify($_POST["password"], $user->getPassword())) {
+        } else if (!password_verify($_POST["password"], $user->getPassword())) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
+        } else if ($_SESSION["loggedin"]) {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/flashcards");
+        } else {
+            return $this->render('login', ['messages' => ['Unknown error!']]);
         }
 
         $_SESSION['loggedin'] = true;
@@ -67,6 +68,22 @@ class SecurityController extends AppController
         $surname = $_POST['surname'];
         $password = $_POST['password'];
         $confirmedPassword = $_POST['confirmedPassword'];
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return $this->render('register', ['messages' => ["Invalid email format!"]]);
+        }
+
+        if ($this->userRepository->existUserByEmail($email)) {
+            return $this->render('register', ['messages' => ['Email is already taken!']]);
+        }
+
+        if (!preg_match('/[A-Za-z]+/', $name) || !preg_match('/[A-Za-z]+/', $surname)) {
+            return $this->render('register', ['messages' => ['Fill all fields!']]);
+        }
+
+        if (strlen($password) < 6) {
+            return $this->render('register', ['messages' => ['Password must be at least 6 characters long!']]);
+        }
 
         if ($password !== $confirmedPassword) {
             return $this->render('register', ['messages' => ['Passwords must be the same!']]);

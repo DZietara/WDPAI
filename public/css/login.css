@@ -123,6 +123,11 @@ input::placeholder {
     color: #2148A1;
 }
 
+.messages {
+    font-size: 0.55em;
+    color: red;
+}
+
 @media only screen and (max-device-width: 600px) {
     
     * {
