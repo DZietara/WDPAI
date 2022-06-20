@@ -33,8 +33,6 @@ class SecurityController extends AppController
         } else if ($_SESSION["loggedin"]) {
             $url = "http://$_SERVER[HTTP_HOST]";
             header("Location: {$url}/flashcards");
-        } else {
-            return $this->render('login', ['messages' => ['Unknown error!']]);
         }
 
         $_SESSION['loggedin'] = true;
