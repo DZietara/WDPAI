@@ -7,12 +7,13 @@ class User {
     private $surname;
     private $password;
 
-    public function __construct(string $email, string $name, string $surname, string $password)
+    public function __construct(string $email, string $name, string $surname, string $password, string $id = "")
     {
         $this->email = $email;
         $this->name = $name;
         $this->surname = $surname;
         $this->password = $password;
+        $this->id = $id;
     }
 
     public function getEmail(): string

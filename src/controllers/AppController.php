@@ -24,10 +24,22 @@ class AppController
     {
         session_start();
 
-        if ($_SESSION['loggedin'] || $template == 'login' || $template == 'register') {
+        if ($_SESSION['loggedin'] && $_SESSION['role'] == 'admin' && $template == 'settings') {
             $templatePath = 'public/views/' . $template . '.php';
             $output = "Page not found";
+            if (file_exists($templatePath)) {
+                extract($variables);
 
+                ob_start();
+                include $templatePath;
+                $output = ob_get_clean();
+            }
+            print $output;
+        } else if ($_SESSION['loggedin'] && $_SESSION['role'] == 'user' && $template == 'settings') {
+            echo "You are not authorized to view this page";
+        } else if ($_SESSION['loggedin'] || $template == 'login' || $template == 'register') {
+            $templatePath = 'public/views/' . $template . '.php';
+            $output = "Page not found";
             if (file_exists($templatePath)) {
                 extract($variables);
 
@@ -37,7 +49,7 @@ class AppController
             }
             print $output;
         } else {
-            echo "Log in to view this page";
+            echo "You are not authorized to view this page";
         }
     }
 }

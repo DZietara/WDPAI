@@ -26,9 +26,15 @@
                 <li>
                     <a href="/learn">Learn</a>
                 </li>
+                <?php
+                    if($_SESSION['role'] == 'admin') {
+                ?>
                 <li>
                     <a href="/settings">Settings</a>
                 </li>
+                <?php
+                    }
+                ?>
                 <li>
                     <a href="/logout">Logout</a>
                 </li>

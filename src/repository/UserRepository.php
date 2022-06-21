@@ -16,7 +16,7 @@ class UserRepository extends Repository
 
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($user == false) {
+        if (!$user) {
             return null;
         }
 
@@ -24,8 +24,33 @@ class UserRepository extends Repository
             $user['email'],
             $user['name'],
             $user['surname'],
-            $user['password']
+            $user['password'],
+            $user["id"]
         );
+    }
+
+    public function getAllUsers(string $email): array
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM public.users
+        ');
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $allUsers = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $users = [];
+        foreach ($allUsers as $user) {
+            $users[] = new User(
+                $user['email'],
+                $user['name'],
+                $user['surname'],
+                $user['password'],
+                $user["id"]
+            );
+        }
+
+        return $users;
     }
 
     public function addUser(User $user)

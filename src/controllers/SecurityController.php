@@ -2,15 +2,20 @@
 
 require_once 'AppController.php';
 require_once __DIR__.'/../models/User.php';
+require_once __DIR__.'/../models/Role.php';
 require_once __DIR__.'/../repository/UserRepository.php';
+require_once __DIR__.'/../repository/RoleRepository.php';
 
 class SecurityController extends AppController
 {
     private $userRepository;
+    private $roleRepository;
+
     public function __construct()
     {
         parent::__construct();
         $this->userRepository = new UserRepository();
+        $this->roleRepository = new RoleRepository();
     }
 
     public function login()
@@ -23,6 +28,7 @@ class SecurityController extends AppController
 
         $email = $_POST["email"];
         $user = $this->userRepository->getUser($email);
+        $role = $this->roleRepository->getRoleByUserId($user->getId());
 
         if (!$user) {
             return $this->render('login', ['messages' => ['User not exist!']]);
@@ -37,6 +43,7 @@ class SecurityController extends AppController
 
         $_SESSION['loggedin'] = true;
         $_SESSION['name'] = $user->getName()." ".$user->getSurname();
+        $_SESSION['role'] = $role->getName();
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/flashcards");
@@ -66,6 +73,7 @@ class SecurityController extends AppController
         $surname = $_POST['surname'];
         $password = $_POST['password'];
         $confirmedPassword = $_POST['confirmedPassword'];
+
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return $this->render('register', ['messages' => ["Invalid email format!"]]);
