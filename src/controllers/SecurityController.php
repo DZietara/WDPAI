@@ -96,8 +96,10 @@ class SecurityController extends AppController
         }
 
         $user = new User($email, $name, $surname, password_hash($password, PASSWORD_DEFAULT));
-
         $this->userRepository->addUser($user);
+
+        $addedUser = $this->userRepository->getUser($user->getEmail());
+        $this->roleRepository->addRoleByUserId($addedUser->getId());
 
         return $this->render('login', ['messages' => ['You\'ve been succesfully registrated!']]);
     }
