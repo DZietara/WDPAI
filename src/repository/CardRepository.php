@@ -12,8 +12,8 @@ class CardRepository extends Repository
             VALUES (:id_set, :question, :answer)
         ');
 
-        $question= $card->getQuestion();
-        $answer= $card->getAnswer();
+        $question = $card->getQuestion();
+        $answer = $card->getAnswer();
 
         $stmt->bindParam(':id_set', $id_set);
         $stmt->bindParam(':question', $question);
@@ -36,7 +36,7 @@ class CardRepository extends Repository
         $allCards = $stmt->fetch(PDO::FETCH_ASSOC);
 
         $cards = [];
-        foreach ($allCards  as $card) {
+        foreach ($allCards as $card) {
             $cards[] = new User(
                 $card['answer'],
                 $card['question'],

@@ -1,10 +1,10 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__.'/../models/User.php';
-require_once __DIR__.'/../models/Role.php';
-require_once __DIR__.'/../repository/UserRepository.php';
-require_once __DIR__.'/../repository/RoleRepository.php';
+require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../models/Role.php';
+require_once __DIR__ . '/../repository/UserRepository.php';
+require_once __DIR__ . '/../repository/RoleRepository.php';
 
 class SecurityController extends AppController
 {
@@ -42,7 +42,7 @@ class SecurityController extends AppController
         }
 
         $_SESSION['loggedin'] = true;
-        $_SESSION['name'] = $user->getName()." ".$user->getSurname();
+        $_SESSION['name'] = $user->getName() . " " . $user->getSurname();
         $_SESSION['role'] = $role->getName();
         $_SESSION["userid"] = $user->getId();
 
@@ -50,7 +50,8 @@ class SecurityController extends AppController
         header("Location: {$url}/sets");
     }
 
-    public function logout() {
+    public function logout()
+    {
         $url = "http://$_SERVER[HTTP_HOST]";
         if (!$this->isGet()) {
             header("Location: {$url}/login");

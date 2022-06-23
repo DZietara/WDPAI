@@ -45,69 +45,17 @@
             <header>
                 <div class="header-container">
                     <span class="title">Sets</span>
-                    <button class="add-flashcard"> Add Set</button>
+                    <button class="add-flashcard" onclick="location.href='/addSet';"> Add Set</button>
                 </div>
                 
             </header>
-            <section>
+            <section class="section-container">
                 <?php foreach ($sets as $set): ?>
                 <div class="flashcard">
                     <span class="flashcard-category"><?= $set->getName(); ?></span>
                     <span class="category-terms">x terms</span>
                 </div>
                 <?php endforeach; ?>
-                <!--
-                <div class="flashcard">
-                    <span class="flashcard-category">Category</span>
-                    <span class="category-terms">x terms</span>
-                </div>
-
-                <div class="flashcard">
-                    <span class="flashcard-category">Category</span>
-                    <span class="category-terms">x terms</span>
-                </div>
-
-                <div class="flashcard">
-                    <span class="flashcard-category">Category</span>
-                    <span class="category-terms">x terms</span>
-                </div>
-
-                <div class="flashcard">
-                    <span class="flashcard-category">Category</span>
-                    <span class="category-terms">x terms</span>
-                </div>
-
-                <div class="flashcard">
-                    <span class="flashcard-category">Category</span>
-                    <span class="category-terms">x terms</span>
-                </div>
-
-                <div class="flashcard">
-                    <span class="flashcard-category">Category</span>
-                    <span class="category-terms">x terms</span>
-                </div>
-
-                <div class="flashcard">
-                    <span class="flashcard-category">Category</span>
-                    <span class="category-terms">x terms</span>
-                </div>
-                
-                <div class="flashcard">
-                    <span class="flashcard-category">Category</span>
-                    <span class="category-terms">x terms</span>
-                </div>
-
-                <div class="flashcard">
-                    <span class="flashcard-category">Category</span>
-                    <span class="category-terms">x terms</span>
-                </div>
-
-                <div class="flashcard">
-                    <span class="flashcard-category">Category</span>
-                    <span class="category-terms">x terms</span>
-                </div>
-                -->
-                
             </section>
         </main>
     </div>

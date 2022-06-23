@@ -133,7 +133,7 @@ header {
     background-color: #2148A1;
 }
 
-section {
+.section-container {
     width: 80%;
     height: 80%;
     display: grid;
@@ -175,6 +175,60 @@ section::-webkit-scrollbar {
 
 .flashcard:hover {
     box-shadow: rgba(0, 0, 0, 0.65) 0px 5px 18px;
+}
+
+.add-set-container {
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.add-set-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+input {
+    background-color: #EBEBEB;
+    height: 5vh;
+    border: 1px solid grey;
+    border-radius: 2px;
+    width: 100%;
+    font-size: 0.5em;
+    color: black;
+    opacity: 50%;
+    font-weight: bold;
+    text-align: center;
+}
+table tr td {
+    padding-inline: 1%;
+}
+
+input::placeholder {
+    font-weight: 400;
+    text-align: center;
+}
+
+#add-set-button {
+    background-color: #3067E6;
+    height: 5.5vh;
+    border: 1px solid #707070;
+    border-radius: 7px;
+    width: 101%;
+    color: white;
+    font-size: 0.55em;
+    transition: background-color 0.5s;
+    margin: 0 auto;
+
+}
+
+#add-set-button:hover {
+    background-color: #2148A1;
 }
 
 @media only screen and (max-device-width: 600px) {
