@@ -21,7 +21,7 @@
         </div>
         <ul class="menu-list">
             <li>
-                <a href="/flashcards">Flashcards</a>
+                <a href="/sets">Sets</a>
             </li>
             <li>
                 <a href="/learn">Learn</a>

@@ -12,6 +12,7 @@ class SetRepository extends Repository
             VALUES (:id_user, :name)
         ');
 
+        $id_user = $_SESSION["userid"];
         $name = $set->getName();
 
         $stmt->bindParam(':name', $name);
@@ -22,16 +23,17 @@ class SetRepository extends Repository
         return $data['id'];
     }
 
-    public function getAllSetsByUser(string $id_user): array
+    public function getAllSetsByUser(): array
     {
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM public.sets WHERE id_user = :id_user
         ');
 
-        $stmt->bindParam(':id_user', $id_user, PDO::PARAM_STR);
+        $id_user = $_SESSION["userid"];
+        $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
         $stmt->execute();
 
-        $allSets = $stmt->fetch(PDO::FETCH_ASSOC);
+        $allSets = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $sets = [];
         foreach ($allSets as $set) {
@@ -45,12 +47,13 @@ class SetRepository extends Repository
         return $sets;
     }
 
-    public function deleteSetByUser(string $id /* $name? */, string $id_user)
+    public function deleteSetByUser(string $id /* $name? */)
     {
         $stmt = $this->database->connect()->prepare('
             DELETE FROM public.sets WHERE id_user = :id_user AND id = :id
         ');
 
+        $id_user = $_SESSION["userid"];
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);
         $stmt->bindParam(':id_user', $id_user, PDO::PARAM_STR);
         $stmt->execute();

@@ -38,15 +38,16 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Wrong password!']]);
         } else if ($_SESSION["loggedin"]) {
             $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/flashcards");
+            header("Location: {$url}/sets");
         }
 
         $_SESSION['loggedin'] = true;
         $_SESSION['name'] = $user->getName()." ".$user->getSurname();
         $_SESSION['role'] = $role->getName();
+        $_SESSION["userid"] = $user->getId();
 
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/flashcards");
+        header("Location: {$url}/sets");
     }
 
     public function logout() {

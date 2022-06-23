@@ -21,7 +21,7 @@
             </div>
             <ul class="menu-list">
                 <li>
-                    <a href="/flashcards">Flashcards</a>
+                    <a href="/sets">Sets</a>
                 </li>
                 <li>
                     <a href="/learn">Learn</a>
@@ -44,12 +44,19 @@
         <main>
             <header>
                 <div class="header-container">
-                    <span class="title">Flashcards</span>
-                    <button class="add-flashcard"> Add Flashcards</button>
+                    <span class="title">Sets</span>
+                    <button class="add-flashcard"> Add Set</button>
                 </div>
                 
             </header>
             <section>
+                <?php foreach ($sets as $set): ?>
+                <div class="flashcard">
+                    <span class="flashcard-category"><?= $set->getName(); ?></span>
+                    <span class="category-terms">x terms</span>
+                </div>
+                <?php endforeach; ?>
+                <!--
                 <div class="flashcard">
                     <span class="flashcard-category">Category</span>
                     <span class="category-terms">x terms</span>
@@ -99,7 +106,7 @@
                     <span class="flashcard-category">Category</span>
                     <span class="category-terms">x terms</span>
                 </div>
-                
+                -->
                 
             </section>
         </main>
