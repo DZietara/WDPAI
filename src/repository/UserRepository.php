@@ -87,9 +87,23 @@ class UserRepository extends Repository
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function deleteUserById($id_user)
+    {
+        $stmt = $this->database->connect()->prepare('
+            DELETE FROM public.users WHERE id = :id_user
+        ');
+
+        $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $data;
+    }
+
     public function existUserByEmail(string $email): bool {
         if($this->getUser($email) != null)
             return true;
         return false;
     }
+
 }

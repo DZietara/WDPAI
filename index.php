@@ -14,5 +14,6 @@ Router::post('login', 'SecurityController');
 Router::post('logout', 'SecurityController');
 Router::post('search', 'SetsController');
 Router::post('searchUser', 'SecurityController');
+Router::post('deleteUser', 'SecurityController');
 
 Router::run($path);

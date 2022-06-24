@@ -53,6 +53,21 @@
             <input class="search" placeholder="search user">
         </div>
 
+        <div class="search-user-bar">
+            <form method="POST" action="deleteUser">
+                <input name="userid" class="search-user" placeholder="delete user by id">
+                <button id="delete-user-button" type="submit">Delete user</button>
+            </form>
+        </div>
+
+        <div class="messages">
+            <?php if(isset($messages)) {
+                foreach ($messages as $message){
+                    echo $message;
+                }
+            }
+            ?>
+        </div>
         <section class="section-container">
             <?php foreach ($settings as $user): ?>
             <div class="users">

@@ -121,6 +121,24 @@ class SecurityController extends AppController
         }
     }
 
+    public function deleteUser()
+    {
+        if ($this->isPost()) {
+            if (!isset($_POST['userid']) || $_POST['userid'] == '' || $_POST['userid'] == $_SESSION["userid"]) {
+                $url = "http://$_SERVER[HTTP_HOST]";
+                header("Location: {$url}/settings");
+                return $this->render('settings', ['messages' => ['Invalid user id!']]);
+            }
+
+            $this->userRepository->deleteUserById($_POST['userid']);
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/settings");
+            return $this->render('settings', ['messages' => ['User has been deleted!']]);
+        }
+
+        return $this->render('settings', ['messages' => $this->message]);
+    }
+
     public function settings()
     {
         $allUsers = $this->userRepository->getAllUsers();

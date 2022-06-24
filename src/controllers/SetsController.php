@@ -39,7 +39,6 @@ class SetsController extends AppController
 
             $url = "http://$_SERVER[HTTP_HOST]";
             header("Location: {$url}/sets");
-
             
             return $this->render('sets', [
                 'messages' => $this->message,
