@@ -59,28 +59,28 @@
                 ?>
             </div>
             <form class="add-set-form" method="POST" action="addSet">
-                <input class="add-set-input" name="setName" id="set-name-input" type="text" placeholder="Set Name">
+                <input class="add-set-input" maxlength="30" name="setName" id="set-name-input" type="text" placeholder="Set Name">
                 <div id="set">
-                    <input class="add-set-input" name="question[]" type="text" placeholder="question">
-                    <input class="add-set-input" name="answer[]" type="text" placeholder="answer">
-                    <input class="add-set-input" name="question[]" type="text" placeholder="question">
-                    <input class="add-set-input" name="answer[]" type="text" placeholder="answer">
-                    <input class="add-set-input" name="question[]" type="text" placeholder="question">
-                    <input class="add-set-input" name="answer[]" type="text" placeholder="answer">
-                    <input class="add-set-input" name="question[]" type="text" placeholder="question">
-                    <input class="add-set-input" name="answer[]" type="text" placeholder="answer">
-                    <input class="add-set-input" name="question[]" type="text" placeholder="question">
-                    <input class="add-set-input" name="answer[]" type="text" placeholder="answer">
-                    <input class="add-set-input" name="question[]" type="text" placeholder="question">
-                    <input class="add-set-input" name="answer[]" type="text" placeholder="answer">
-                    <input class="add-set-input" name="question[]" type="text" placeholder="question">
-                    <input class="add-set-input" name="answer[]" type="text" placeholder="answer">
-                    <input class="add-set-input" name="question[]" type="text" placeholder="question">
-                    <input class="add-set-input" name="answer[]" type="text" placeholder="answer">
-                    <input class="add-set-input" name="question[]" type="text" placeholder="question">
-                    <input class="add-set-input" name="answer[]" type="text" placeholder="answer">
-                    <input class="add-set-input" name="question[]" type="text" placeholder="question">
-                    <input class="add-set-input" name="answer[]" type="text" placeholder="answer">
+                    <input class="add-set-input" maxlength="255" name="question[]" type="text" placeholder="question">
+                    <input class="add-set-input" maxlength="255" name="answer[]" type="text" placeholder="answer">
+                    <input class="add-set-input" maxlength="255" name="question[]" type="text" placeholder="question">
+                    <input class="add-set-input" maxlength="255" name="answer[]" type="text" placeholder="answer">
+                    <input class="add-set-input" maxlength="255" name="question[]" type="text" placeholder="question">
+                    <input class="add-set-input" maxlength="255" name="answer[]" type="text" placeholder="answer">
+                    <input class="add-set-input" maxlength="255" name="question[]" type="text" placeholder="question">
+                    <input class="add-set-input" maxlength="255" name="answer[]" type="text" placeholder="answer">
+                    <input class="add-set-input" maxlength="255" name="question[]" type="text" placeholder="question">
+                    <input class="add-set-input" maxlength="255" name="answer[]" type="text" placeholder="answer">
+                    <input class="add-set-input" maxlength="255" name="question[]" type="text" placeholder="question">
+                    <input class="add-set-input" maxlength="255" name="answer[]" type="text" placeholder="answer">
+                    <input class="add-set-input" maxlength="255" name="question[]" type="text" placeholder="question">
+                    <input class="add-set-input" maxlength="255" name="answer[]" type="text" placeholder="answer">
+                    <input class="add-set-input" maxlength="255" name="question[]" type="text" placeholder="question">
+                    <input class="add-set-input" maxlength="255" name="answer[]" type="text" placeholder="answer">
+                    <input class="add-set-input" maxlength="255" name="question[]" type="text" placeholder="question">
+                    <input class="add-set-input" maxlength="255" name="answer[]" type="text" placeholder="answer">
+                    <input class="add-set-input" maxlength="255" name="question[]" type="text" placeholder="question">
+                    <input class="add-set-input" maxlength="255" name="answer[]" type="text" placeholder="answer">
                 </div>
                 <button id="add-set-button" type="submit">Add Set</button>
                 <div class="controls">
