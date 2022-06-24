@@ -26,16 +26,19 @@ class SetsController extends AppController
 
     public function addSet()
     {
-        if ($this->isPost()) {
+        if ($this->isPost() && (isset($_POST['setName']) && $_POST['setName'] != '')) {
             $set = new Set($_POST['setName'], $_SESSION["userid"]);
             $id_set = $this->setRepository->addSetByUser($set);
 
-            for ($i = 1; $i <= 10; $i++) {
-                if ((isset($_POST['q' . $i]) and $_POST['q' . $i] != '') && (isset($_POST['a' . $i]) and $_POST['a' . $i] != '')) {
-                    $card = new Card($_POST['q' . $i], $_POST['a' . $i]);
+            for ($i = 0; $i < count($_POST['question']); $i++) {
+                if ((isset($_POST['question'][$i]) and $_POST['question'][$i] != '') && (isset($_POST['answer'][$i]) and $_POST['answer'][$i] != '')) {
+                    $card = new Card($_POST['question'][$i], ($_POST['answer'][$i]));
                     $this->addCard($card, $id_set);
                 }
             }
+
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/sets");
 
             return $this->render('sets', [
                 'messages' => $this->message,

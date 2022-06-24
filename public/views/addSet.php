@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
 <div class="base-container">
     <nav>
         <div class="logo-container">
@@ -58,55 +59,37 @@
                 ?>
             </div>
             <form class="add-set-form" method="POST" action="addSet">
-                <table>
-                    <tr>
-                        <td colspan="2"><input name="setName" type="text" placeholder="Set Name"></td>
-                    </tr>
-                    <tr>
-                        <td><input name="q1" type="text" placeholder="question"></td>
-                        <td><input name="a1" type="text" placeholder="answer"></td>
-                    </tr>
-                    <tr>
-                        <td><input name="q2" type="text" placeholder="question"></td>
-                        <td><input name="a2" type="text" placeholder="answer"></td>
-                    </tr>
-                    <tr>
-                        <td><input name="q3" type="text" placeholder="question"></td>
-                        <td><input name="a3" type="text" placeholder="answer"></td>
-                    </tr>
-                    <tr>
-                        <td><input name="q4" type="text" placeholder="question"></td>
-                        <td><input name="a4" type="text" placeholder="answer"></td>
-                    </tr>
-                    <tr>
-                        <td><input name="q5" type="text" placeholder="question"></td>
-                        <td><input name="a5" type="text" placeholder="answer"></td>
-                    </tr>
-                    <tr>
-                        <td><input name="q6" type="text" placeholder="question"></td>
-                        <td><input name="a6" type="text" placeholder="answer"></td>
-                    </tr>
-                    <tr>
-                        <td><input name="q7" type="text" placeholder="question"></td>
-                        <td><input name="a7" type="text" placeholder="answer"></td>
-                    </tr>
-                    <tr>
-                        <td><input name="q8" type="text" placeholder="question"></td>
-                        <td><input name="a8" type="text" placeholder="answer"></td>
-                    </tr>
-                    <tr>
-                        <td><input name="q9" type="text" placeholder="question"></td>
-                        <td><input name="a9" type="text" placeholder="answer"></td>
-                    </tr>
-                    <tr>
-                        <td><input name="q10" type="text" placeholder="question"></td>
-                        <td><input name="a10" type="text" placeholder="answer"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><button id="add-set-button" type="submit">Add Set</button></td>
-                    </tr>
-                </table>
+                <input name="setName" id="set-name-input" type="text" placeholder="Set Name">
+                <div id="set">
+                    <input name="question[]" type="text" placeholder="question">
+                    <input name="answer[]" type="text" placeholder="answer">
+                    <input name="question[]" type="text" placeholder="question">
+                    <input name="answer[]" type="text" placeholder="answer">
+                    <input name="question[]" type="text" placeholder="question">
+                    <input name="answer[]" type="text" placeholder="answer">
+                    <input name="question[]" type="text" placeholder="question">
+                    <input name="answer[]" type="text" placeholder="answer">
+                    <input name="question[]" type="text" placeholder="question">
+                    <input name="answer[]" type="text" placeholder="answer">
+                    <input name="question[]" type="text" placeholder="question">
+                    <input name="answer[]" type="text" placeholder="answer">
+                    <input name="question[]" type="text" placeholder="question">
+                    <input name="answer[]" type="text" placeholder="answer">
+                    <input name="question[]" type="text" placeholder="question">
+                    <input name="answer[]" type="text" placeholder="answer">
+                    <input name="question[]" type="text" placeholder="question">
+                    <input name="answer[]" type="text" placeholder="answer">
+                    <input name="question[]" type="text" placeholder="question">
+                    <input name="answer[]" type="text" placeholder="answer">
+                </div>
+                <button id="add-set-button" type="submit">Add Set</button>
+                <div class="controls">
+                    <a href="#" id="add_more_fields">Add Field</a>
+                    <a href="#" id="remove_fields">Remove Field</a>
+                </div>
             </form>
+            <script type="text/javascript" src="./public/js/addset.js"></script>
+
         </section>
     </main>
 </div>
