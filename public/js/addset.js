@@ -6,12 +6,14 @@ add_more_fields.onclick = function(){
     var newField = document.createElement('input');
     newField.setAttribute('type','text');
     newField.setAttribute('name','question[]');
+    newField.setAttribute('class','add-set-input');
     newField.setAttribute('placeholder','question');
     survey_options.appendChild(newField);
 
     var newField2 = document.createElement('input');
     newField2.setAttribute('type','text');
     newField2.setAttribute('name','answer[]');
+    newField2.setAttribute('class','add-set-input');
     newField2.setAttribute('placeholder','answer');
     survey_options.appendChild(newField2);
 }

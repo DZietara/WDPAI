@@ -115,17 +115,40 @@ header {
     font-weight: 800;
 }
 
+.search-bar {
+    width: 20%;
+    margin-left: 10%;
+    margin-bottom: 1%;
+}
+
+.search {
+    width: 100%;
+    font-size: 0.5em;
+    color: black;
+    opacity: 50%;
+    font-weight: bold;
+    text-align: center;
+    background-color: #EBEBEB;
+    border-radius: 7px;
+    height: 4vh;
+    border: 1px solid grey;
+}
+
+.search::placeholder {
+    font-weight: 400;
+    text-align: center;
+}
+
 .add-flashcard {
     background-color: #3067E6;
     height: 5.5vh;
     border: 1px solid #707070;
     border-radius: 7px;
-    margin: 1.5%;
     width: 27%;
     color: white;
     font-size: 0.50em;
     transition: background-color 0.5s;
-    margin-right: 3%;
+    margin: 1.5% 3% 1.5% 1.5%;
 }
 
 .add-flashcard:hover {
@@ -191,11 +214,6 @@ section::-webkit-scrollbar {
     height: 80%;
 }
 
-#set::-webkit-scrollbar {
-   /* display: none;*/ /* hide scrollbar */
-}
-
-
 #set {
     height: 55vh;
     display: grid;
@@ -206,7 +224,7 @@ section::-webkit-scrollbar {
     overflow-x: hidden;
 }
 
-input {
+.add-set-input {
     background-color: #EBEBEB;
     height: 4vh;
     border: 1px solid grey;
@@ -219,7 +237,7 @@ input {
     text-align: center;
 }
 
-input::placeholder {
+.add-set-input::placeholder {
     font-weight: 400;
     text-align: center;
 }

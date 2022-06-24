@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <script type="text/javascript" src="./public/js/search.js" defer></script>
     <title>eFlashcards</title>
 </head>
 
@@ -47,8 +48,11 @@
                     <span class="title">Sets</span>
                     <button class="add-flashcard" onclick="location.href='/addSet';"> Add Set</button>
                 </div>
-                
+
             </header>
+            <div class="search-bar">
+                <input class="search" placeholder="search set">
+            </div>
             <section class="section-container">
                 <?php foreach ($sets as $set): ?>
                 <div class="flashcard">
@@ -63,3 +67,10 @@
 </body>
 
 </html>
+
+<template id="set-template">
+    <div class="flashcard">
+        <span class="flashcard-category">category</span>
+        <span class="category-terms">x terms</span>
+    </div>
+</template>
