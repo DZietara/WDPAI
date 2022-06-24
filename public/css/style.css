@@ -269,6 +269,9 @@ section::-webkit-scrollbar {
     padding: 1em;
 }
 
+td {
+    font-size: 0.5em;
+}
 @media only screen and (max-device-width: 600px) {
     /* TO DO */
 

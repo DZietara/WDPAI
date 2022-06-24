@@ -1,5 +1,5 @@
 const search = document.querySelector('input[placeholder="search set"]');
-const projectContainer = document.querySelector(".section-container");
+const setContainer = document.querySelector(".section-container");
 
 search.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
@@ -16,20 +16,20 @@ search.addEventListener("keyup", function (event) {
         }).then(function (response) {
             return response.json();
         }).then(function (sets) {
-            projectContainer.innerHTML = "";
-            loadProjects(sets)
+            setContainer.innerHTML = "";
+            loadSets(sets)
         });
     }
 });
 
-function loadProjects(sets) {
+function loadSets(sets) {
     sets.forEach(set => {
         console.log(set);
-        createProject(set);
+        createSet(set);
     });
 }
 
-function createProject(set) {
+function createSet(set) {
     const template = document.querySelector("#set-template");
 
     const clone = template.content.cloneNode(true);
@@ -39,7 +39,7 @@ function createProject(set) {
     const name = clone.querySelector(".flashcard-category");
     name.innerHTML = set.name;
     const terms = clone.querySelector(".category-terms");
-    terms .innerHTML = "x terms";
+    terms.innerHTML = "x terms";
 
-    projectContainer.appendChild(clone);
+    setContainer.appendChild(clone);
 }

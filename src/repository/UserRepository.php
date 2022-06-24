@@ -29,15 +29,13 @@ class UserRepository extends Repository
         );
     }
 
-    public function getAllUsers(string $email): array
+    public function getAllUsers(): array
     {
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM public.users
         ');
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
-
-        $allUsers = $stmt->fetch(PDO::FETCH_ASSOC);
+        $allUsers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $users = [];
         foreach ($allUsers as $user) {
@@ -73,6 +71,20 @@ class UserRepository extends Repository
 
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
         return $data['id'];
+    }
+
+    public function getUserBySearch(string $searchString)
+    {
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM users WHERE LOWER(email) LIKE :search OR LOWER(name) LIKE :search OR LOWER(surname) LIKE :search
+        ');
+
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function existUserByEmail(string $email): bool {
