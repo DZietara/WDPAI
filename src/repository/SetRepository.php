@@ -65,9 +65,11 @@ class SetRepository extends Repository
         $searchString = '%' . strtolower($searchString) . '%';
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM sets WHERE LOWER(name) LIKE :search
+            SELECT * FROM sets WHERE LOWER(name) LIKE :search AND id_user = :id_user
         ');
-        
+
+        $id_user = $_SESSION["userid"];
+        $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
         $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
         $stmt->execute();
 
