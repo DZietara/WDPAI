@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="public/css/settings.css">
-    <script type="text/javascript" src="./public/js/searchUser.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="public/css/admin.css">
+    <script type="text/javascript" src="./public/js/user.js" defer></script>
     <title>eFlashcards</title>
 </head>
 
@@ -26,13 +26,13 @@
                 <a href="/sets">Sets</a>
             </li>
             <li>
-                <a href="/learn">Learn</a>
+                <a href="/test">Test</a>
             </li>
             <?php
             if($_SESSION['role'] == 'admin') {
                 ?>
                 <li>
-                    <a href="/settings">Settings</a>
+                    <a href="/admin">Admin panel</a>
                 </li>
                 <?php
             }
@@ -46,20 +46,12 @@
     <main>
         <header>
             <div class="header-container">
-                <span class="title">Settings</span>
+                <span class="title">Admin panel</span>
             </div>
         </header>
         <div class="search-bar">
             <input class="search" placeholder="search user">
         </div>
-
-        <div class="search-user-bar">
-            <form method="POST" action="deleteUser">
-                <input name="userid" class="search-user" placeholder="delete user by id">
-                <button id="delete-user-button" type="submit">Delete user</button>
-            </form>
-        </div>
-
         <div class="messages">
             <?php if(isset($messages)) {
                 foreach ($messages as $message){
@@ -69,48 +61,28 @@
             ?>
         </div>
         <section class="section-container">
-            <?php foreach ($settings as $user): ?>
-            <div class="users">
-                <table>
-                    <tr>
-                        <td>ID: </td> <td><?= $user->getId(); ?></td>
-                    </tr>
-                    <tr>
-                        <td>NAME: </td> <td><?= $user->getName(); ?></td>
-                    </tr>
-                    <tr>
-                        <td> SURNAME: </td> <td><?= $user->getSurname(); ?></td>
-                    </tr>
-                    <tr>
-                        <td>EMAIL: </td> <td><?= $user->getEmail(); ?></td>
-                    </tr>
-                </table>
+            <?php foreach ($admin as $user): ?>
+            <div class="users" id="<?= $user->getId(); ?>">
+                <span class="user-info" id="user-id">ID: <?= $user->getId(); ?></span>
+                <span class="user-info" id="user-name"> NAME: <?= $user->getName(); ?></span>
+                <span class="user-info" id="user-surname"> SURNAME: <?= $user->getSurname(); ?></span>
+                <span class="user-info" id="user-email">  EMAIL: <?= $user->getEmail(); ?></span>
+                <button id="delete-button">delete</button>
             </div>
             <?php endforeach; ?>
-
         </section>
     </main>
 </div>
 
 </body>
-
 </html>
 
 <template id="user-template">
-    <div class="users">
-        <table>
-            <tr>
-                <td>ID: </td> <td class="user-id"></td>
-            </tr>
-            <tr>
-                <td>NAME: </td> <td class="user-name"></td>
-            </tr>
-            <tr>
-                <td> SURNAME: </td> <td class="user-surname"></td>
-            </tr>
-            <tr>
-                <td>EMAIL: </td> <td class="user-email"></td>
-            </tr>
-        </table>
+    <div class="users" id="">
+        <span class="user-info" id="user-id"></span>
+        <span class="user-info" id="user-name"> </span>
+        <span class="user-info" id="user-surname"></span>
+        <span class="user-info" id="user-email"></span>
+        <button id="delete-button">delete</button>
     </div>
 </template>

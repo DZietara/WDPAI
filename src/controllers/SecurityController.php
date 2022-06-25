@@ -28,7 +28,6 @@ class SecurityController extends AppController
 
         $email = $_POST["email"];
         $user = $this->userRepository->getUser($email);
-        $role = $this->roleRepository->getRoleByUserId($user->getId());
 
         if (!$user) {
             return $this->render('login', ['messages' => ['User not exist!']]);
@@ -41,6 +40,7 @@ class SecurityController extends AppController
             header("Location: {$url}/sets");
         }
 
+        $role = $this->roleRepository->getRoleByUserId($user->getId());
         $_SESSION['loggedin'] = true;
         $_SESSION['name'] = $user->getName() . " " . $user->getSurname();
         $_SESSION['role'] = $role->getName();
@@ -123,26 +123,19 @@ class SecurityController extends AppController
 
     public function deleteUser()
     {
-        if ($this->isPost()) {
-            if (!isset($_POST['userid']) || $_POST['userid'] == '' || $_POST['userid'] == $_SESSION["userid"]) {
-                $url = "http://$_SERVER[HTTP_HOST]";
-                header("Location: {$url}/settings");
-                return $this->render('settings', ['messages' => ['Invalid user id!']]);
-            }
-
-            $this->userRepository->deleteUserById($_POST['userid']);
+        if ($_SESSION['role'] == 'admin' && $_GET['id'] != $_SESSION['userid']) {
+            $this->userRepository->deleteUserById($_GET['id']);
             $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/settings");
-            return $this->render('settings', ['messages' => ['User has been deleted!']]);
+            header("Location: {$url}/admin");
         }
-
-        return $this->render('settings', ['messages' => $this->message]);
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/admin");
     }
 
-    public function settings()
+    public function admin()
     {
         $allUsers = $this->userRepository->getAllUsers();
-        $this->render('settings', ['settings' => $allUsers]);
+        $this->render('admin', ['admin' => $allUsers]);
     }
 
 }

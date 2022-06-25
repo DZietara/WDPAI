@@ -76,19 +76,15 @@ class SetRepository extends Repository
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function deleteSetByUser(string $id /* $name? */)
+    public function deleteSet($id)
     {
         $stmt = $this->database->connect()->prepare('
             DELETE FROM public.sets WHERE id_user = :id_user AND id = :id
         ');
 
         $id_user = $_SESSION["userid"];
-        $stmt->bindParam(':id', $id, PDO::PARAM_STR);
-        $stmt->bindParam(':id_user', $id_user, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
         $stmt->execute();
-
-        $data = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $data;
     }
-
 }

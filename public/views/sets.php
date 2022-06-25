@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <script type="text/javascript" src="./public/js/search.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="public/css/admin.css">
+    <script type="text/javascript" src="./public/js/set.js" defer></script>
+    <script type="text/javascript" src="./public/js/cards.js" defer></script>
     <title>eFlashcards</title>
 </head>
 
@@ -25,13 +27,13 @@
                     <a href="/sets">Sets</a>
                 </li>
                 <li>
-                    <a href="/learn">Learn</a>
+                    <a href="/test">Test</a>
                 </li>
                 <?php
                     if($_SESSION['role'] == 'admin') {
                 ?>
                 <li>
-                    <a href="/settings">Settings</a>
+                    <a href="/admin">Admin panel</a>
                 </li>
                 <?php
                     }
@@ -55,9 +57,10 @@
             </div>
             <section class="section-container">
                 <?php foreach ($sets as $set): ?>
-                <div class="flashcard">
+                <div class="flashcard" id="<?= $set->getId(); ?>">
                     <span class="flashcard-category"><?= $set->getName(); ?></span>
                     <span class="category-terms">x terms</span>
+                    <button id="delete-button">delete</button>
                 </div>
                 <?php endforeach; ?>
             </section>
@@ -65,12 +68,12 @@
     </div>
 
 </body>
-
 </html>
 
 <template id="set-template">
-    <div class="flashcard">
+    <div class="flashcard" id="">
         <span class="flashcard-category">category</span>
         <span class="category-terms">x terms</span>
+        <button id="delete-button">delete</button>
     </div>
 </template>

@@ -5,15 +5,19 @@ require 'Routing.php';
 $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url($path, PHP_URL_PATH);
 
+Router::get('test', 'DefaultController');
+
 Router::get('sets', 'SetsController');
 Router::post('addSet', 'SetsController');
-Router::get('learn', 'DefaultController');
-Router::get('settings', 'SecurityController');
+Router::get('deleteSet', 'SetsController');
+Router::post('search', 'SetsController');
+Router::get('card', 'CardsController');
+
 Router::get('register', 'SecurityController');
 Router::post('login', 'SecurityController');
 Router::post('logout', 'SecurityController');
-Router::post('search', 'SetsController');
+Router::get('admin', 'SecurityController');
 Router::post('searchUser', 'SecurityController');
-Router::post('deleteUser', 'SecurityController');
+Router::get('deleteUser', 'SecurityController');
 
 Router::run($path);

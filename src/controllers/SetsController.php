@@ -49,6 +49,13 @@ class SetsController extends AppController
         return $this->render('addSet', ['messages' => $this->message]);
     }
 
+    public function deleteSet()
+    {
+        $this->setRepository->deleteSet($_GET['id']);
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/sets");
+    }
+
     public function search()
     {
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';

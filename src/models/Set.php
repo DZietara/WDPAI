@@ -5,7 +5,7 @@ class Set {
     private $id_user;
     private $name;
 
-    public function __construct(string $name, string $id_user, string $id = "")
+    public function __construct(string $name, string $id_user, int $id = null)
     {
         $this->name = $name;
         $this->id_user = $id_user;
@@ -32,7 +32,7 @@ class Set {
         $this->id_user = $id_user;
     }
 
-    public function getId(): string
+    public function getId(): int
     {
         return $this->id;
     }
