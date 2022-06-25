@@ -1,0 +1,30 @@
+.section-container-cards {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(186, 186, 186, 0.5)
+}
+
+.cards:hover {
+    background-color: rgba(186, 186, 186, 0.2)
+}
+
+.card {
+    font-size: 0.5em;
+    display: grid;
+    grid-gap: 1em;
+    width: 100%;
+}
+
+.card:first-child{
+    border-right: 1px solid rgba(186, 186, 186, 0.5);
+}

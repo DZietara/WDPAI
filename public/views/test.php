@@ -24,13 +24,13 @@
                 <a href="/sets">Sets</a>
             </li>
             <li>
-                <a href="/learn">Learn</a>
+                <a href="/test">Test</a>
             </li>
             <?php
             if($_SESSION['role'] == 'admin') {
                 ?>
                 <li>
-                    <a href="/settings">Settings</a>
+                    <a href="/admin">Admin panel</a>
                 </li>
                 <?php
             }
@@ -44,7 +44,7 @@
     <main>
         <header>
             <div class="header-container">
-                <span class="title">Learn</span>
+                <span class="title">Test</span>
             </div>
 
         </header>

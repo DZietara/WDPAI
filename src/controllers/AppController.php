@@ -24,7 +24,7 @@ class AppController
     {
         session_start();
 
-        if ($_SESSION['loggedin'] && $_SESSION['role'] == 'admin' && $template == 'settings') {
+        if ($_SESSION['loggedin'] && $_SESSION['role'] == 'admin' && $template == 'admin') {
             $templatePath = 'public/views/' . $template . '.php';
             $output = "Page not found";
             if (file_exists($templatePath)) {
@@ -35,7 +35,7 @@ class AppController
                 $output = ob_get_clean();
             }
             print $output;
-        } else if ($_SESSION['loggedin'] && $_SESSION['role'] == 'user' && $template == 'settings') {
+        } else if ($_SESSION['loggedin'] && $_SESSION['role'] == 'user' && $template == 'admin') {
             echo "You are not authorized to view this page";
         } else if ($_SESSION['loggedin'] || $template == 'login' || $template == 'register') {
             $templatePath = 'public/views/' . $template . '.php';

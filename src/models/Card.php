@@ -2,10 +2,11 @@
 
 class Card {
     private $id;
+    private $id_set;
     private $question;
     private $answer;
 
-    public function __construct(string $question, string $answer, string $id = "")
+    public function __construct(string $question, string $answer, $id = null, $id_set = null)
     {
         $this->question = $question;
         $this->answer = $answer;
@@ -32,9 +33,14 @@ class Card {
         $this->answer = $answer;
     }
 
-    public function getId(): string
+    public function getId(): int
     {
         return $this->id;
+    }
+
+    public function getSetId(): int
+    {
+        return $this->id_set;
     }
 
 }

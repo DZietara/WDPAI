@@ -24,20 +24,20 @@ class CardRepository extends Repository
         return $data['id'];
     }
 
-    public function getAllCardsBySetId(string $id_set): array
+    public function getAllCardsBySetId($id_set): array
     {
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM public.cards WHERE id_set = :id_set
         ');
-        // SELECT s.name, c.question, c.answer FROM public.sets s INNER JOIN public.cards c ON s.id=c.id_set WHERE s.id_user=1;
-        $stmt->bindParam(':id_set', $id_set, PDO::PARAM_STR);
+
+        $stmt->bindParam(':id_set', $id_set, PDO::PARAM_INT);
         $stmt->execute();
 
-        $allCards = $stmt->fetch(PDO::FETCH_ASSOC);
+        $allCards = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $cards = [];
         foreach ($allCards as $card) {
-            $cards[] = new User(
+            $cards[] = new Card(
                 $card['answer'],
                 $card['question'],
                 $card['id_set'],
