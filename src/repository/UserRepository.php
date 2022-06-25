@@ -95,12 +95,10 @@ class UserRepository extends Repository
 
         $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
         $stmt->execute();
-
-        $data = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $data;
     }
 
-    public function existUserByEmail(string $email): bool {
+    public function existUserByEmail(string $email): bool
+    {
         if($this->getUser($email) != null)
             return true;
         return false;
