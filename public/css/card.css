@@ -28,3 +28,14 @@
 .card:first-child{
     border-right: 1px solid rgba(186, 186, 186, 0.5);
 }
+
+@media only screen and (max-device-width: 600px)  {
+
+    .section-container-cards {
+        width: 90%;
+    }
+
+    .card {
+        font-size: 0.65em;
+    }
+}

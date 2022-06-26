@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/card.css">
     <script type="text/javascript" src="./public/js/search.js" defer></script>
     <script type="text/javascript" src="./public/js/deleteSet.js" defer></script>
+    <script src="https://kit.fontawesome.com/ad3f96515e.js" crossorigin="anonymous"></script>
     <title>eFlashcards</title>
 </head>
 
@@ -16,9 +17,9 @@
 <div class="base-container">
     <?php include("navbar.php") ?>
     <main>
-        <header>
+        <header id="header">
             <div class="header-container">
-                <span class="title">Cards</span>
+                <span class="title" id="title">Cards</span>
             </div>
 
         </header>

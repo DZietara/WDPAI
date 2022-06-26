@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/admin.css">
     <script type="text/javascript" src="./public/js/set.js" defer></script>
     <script type="text/javascript" src="./public/js/cards.js" defer></script>
+    <script src="https://kit.fontawesome.com/ad3f96515e.js" crossorigin="anonymous"></script>
     <title>eFlashcards</title>
 </head>
 
@@ -19,9 +20,8 @@
         <header>
             <div class="header-container">
                 <span class="title">Sets</span>
-                <button class="add-flashcard" onclick="location.href='/addSet';"> Add Set</button>
+                <button class="add-flashcard" onclick="location.href='/addSet';"><i class="fa-solid fa-plus"></i> Add Set</button>
             </div>
-
         </header>
         <div class="search-bar">
             <input class="search" placeholder="search set">

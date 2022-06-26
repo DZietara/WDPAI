@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/admin.css">
     <script type="text/javascript" src="./public/js/user.js" defer></script>
+    <script src="https://kit.fontawesome.com/ad3f96515e.js" crossorigin="anonymous"></script>
     <title>eFlashcards</title>
 </head>
 
@@ -38,7 +39,7 @@
                     <span class="user-info" id="user-name"> NAME: <?= $user->getName(); ?></span>
                     <span class="user-info" id="user-surname"> SURNAME: <?= $user->getSurname(); ?></span>
                     <span class="user-info" id="user-email">  EMAIL: <?= $user->getEmail(); ?></span>
-                    <button id="delete-button">delete</button>
+                    <button id="delete-button" class="del">delete</button>
                 </div>
             <?php endforeach; ?>
         </section>
