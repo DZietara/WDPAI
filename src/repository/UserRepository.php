@@ -1,7 +1,7 @@
 <?php
 
 require_once 'Repository.php';
-require_once __DIR__.'/../models/User.php';
+require_once __DIR__ . '/../models/User.php';
 
 class UserRepository extends Repository
 {
@@ -99,7 +99,7 @@ class UserRepository extends Repository
 
     public function existUserByEmail(string $email): bool
     {
-        if($this->getUser($email) != null)
+        if ($this->getUser($email) != null)
             return true;
         return false;
     }

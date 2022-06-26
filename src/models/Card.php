@@ -1,6 +1,7 @@
 <?php
 
-class Card {
+class Card
+{
     private $id;
     private $id_set;
     private $question;

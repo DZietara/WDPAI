@@ -10,34 +10,34 @@
 </head>
 
 <body>
-    <div class="container">
+<div class="container">
 
-        <div class="logo-container">
-            <img class="logo" src="public/img/logo.svg">
+    <div class="logo-container">
+        <img class="logo" src="public/img/logo.svg">
+    </div>
+
+    <div class="login-container">
+        <div class="message">
+            <span id="hello">Log in</span>
         </div>
-        
-        <div class="login-container">
-            <div class="message">
-                <span id="hello">Log in</span>
-            </div>
-            <form id="login-form" method="POST" action="login">
-                <input name="email" type="text" placeholder="Email Address">
-                <input name="password" type="password" placeholder="Password">
-                <button id="login-button" type="submit">Log In</button>
-                <span id="bottom-text">Don't have an account? <a href="/register">Sign up</a></span>
-                <div class="messages">
-                    <?php if(isset($messages)) {
-                        foreach ($messages as $message){
-                            echo $message;
-                        }
+        <form id="login-form" method="POST" action="login">
+            <input name="email" type="text" placeholder="Email Address">
+            <input name="password" type="password" placeholder="Password">
+            <button id="login-button" type="submit">Log In</button>
+            <span id="bottom-text">Don't have an account? <a href="/register">Sign up</a></span>
+            <div class="messages">
+                <?php if (isset($messages)) {
+                    foreach ($messages as $message) {
+                        echo $message;
                     }
-                    ?>
-                </div>
-            </form>
-                
-        </div>
+                }
+                ?>
+            </div>
+        </form>
 
     </div>
+
+</div>
 
 </body>
 

@@ -5,7 +5,8 @@ require_once 'src/controllers/SecurityController.php';
 require_once 'src/controllers/SetsController.php';
 require_once 'src/controllers/CardsController.php';
 
-class Router {
+class Router
+{
 
     public static $routes;
 
@@ -19,7 +20,8 @@ class Router {
         self::$routes[$url] = $view;
     }
 
-    static public function run(string $url) {
+    static public function run(string $url)
+    {
         $urlParts = explode("/", $url);
         $action = $urlParts[0];
 

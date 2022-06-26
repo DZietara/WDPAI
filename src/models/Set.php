@@ -1,6 +1,7 @@
 <?php
 
-class Set {
+class Set
+{
     private $id;
     private $id_user;
     private $name;

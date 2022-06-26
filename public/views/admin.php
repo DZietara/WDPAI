@@ -13,36 +13,7 @@
 
 <body>
 <div class="base-container">
-    <nav>
-        <div class="logo-container">
-            <img class="logo" src="public/img/logo.svg">
-        </div>
-        <div class="user-container">
-            <img class="user" src="public/img/user.png">
-            <span id="username"><?php echo $_SESSION["name"]; ?></span>
-        </div>
-        <ul class="menu-list">
-            <li>
-                <a href="/sets">Sets</a>
-            </li>
-            <li>
-                <a href="/test">Test</a>
-            </li>
-            <?php
-            if($_SESSION['role'] == 'admin') {
-                ?>
-                <li>
-                    <a href="/admin">Admin panel</a>
-                </li>
-                <?php
-            }
-            ?>
-            <li>
-                <a href="/logout">Logout</a>
-            </li>
-        </ul>
-    </nav>
-
+    <?php include("navbar.php") ?>
     <main>
         <header>
             <div class="header-container">
@@ -53,8 +24,8 @@
             <input class="search" placeholder="search user">
         </div>
         <div class="messages">
-            <?php if(isset($messages)) {
-                foreach ($messages as $message){
+            <?php if (isset($messages)) {
+                foreach ($messages as $message) {
                     echo $message;
                 }
             }
@@ -62,13 +33,13 @@
         </div>
         <section class="section-container">
             <?php foreach ($admin as $user): ?>
-            <div class="users" id="<?= $user->getId(); ?>">
-                <span class="user-info" id="user-id">ID: <?= $user->getId(); ?></span>
-                <span class="user-info" id="user-name"> NAME: <?= $user->getName(); ?></span>
-                <span class="user-info" id="user-surname"> SURNAME: <?= $user->getSurname(); ?></span>
-                <span class="user-info" id="user-email">  EMAIL: <?= $user->getEmail(); ?></span>
-                <button id="delete-button">delete</button>
-            </div>
+                <div class="users" id="<?= $user->getId(); ?>">
+                    <span class="user-info" id="user-id">ID: <?= $user->getId(); ?></span>
+                    <span class="user-info" id="user-name"> NAME: <?= $user->getName(); ?></span>
+                    <span class="user-info" id="user-surname"> SURNAME: <?= $user->getSurname(); ?></span>
+                    <span class="user-info" id="user-email">  EMAIL: <?= $user->getEmail(); ?></span>
+                    <button id="delete-button">delete</button>
+                </div>
             <?php endforeach; ?>
         </section>
     </main>

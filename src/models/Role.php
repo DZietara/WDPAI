@@ -1,6 +1,7 @@
 <?php
 
-class Role {
+class Role
+{
     private $name;
 
     public function __construct(string $name)
