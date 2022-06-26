@@ -1,6 +1,6 @@
 const search = document.querySelector('input[placeholder="search set"]');
 const setContainer = document.querySelector(".section-container");
-const set = document.querySelectorAll("#delete-button");
+const deleteButton = document.querySelectorAll("#delete-button");
 
 search.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
@@ -41,7 +41,8 @@ function createSet(set) {
     name.innerHTML = set.name;
     const terms = clone.querySelector(".category-terms");
     terms.innerHTML = "x terms";
-
+    const bt = clone.querySelector("#delete-button");
+    bt.addEventListener("click", deleteSet);
     setContainer.appendChild(clone);
 }
 
@@ -52,4 +53,4 @@ function deleteSet(e) {
     window.location = '/deleteSet?id=' + id;
 }
 
-set.forEach(button => button.addEventListener("click", deleteSet));
+deleteButton.forEach(button => button.addEventListener("click", deleteSet));

@@ -1,6 +1,6 @@
 const search = document.querySelector('input[placeholder="search user"]');
 const userContainer = document.querySelector(".section-container");
-const userS = document.querySelectorAll("#delete-button");
+const deleteButton = document.querySelectorAll("#delete-button");
 
 search.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
@@ -45,7 +45,8 @@ function createUser(user) {
     surname.innerHTML = "SURNAME: " + user.surname;
     const email = clone.querySelector("#user-email");
     email.innerHTML = "EMAIL: " + user.email;
-
+    const bt = clone.querySelector("#delete-button");
+    bt.addEventListener("click", deleteUser);
     userContainer.appendChild(clone);
 }
 
@@ -56,4 +57,4 @@ function deleteUser(e) {
     window.location = '/deleteUser?id=' + id;
 }
 
-userS.forEach(button => button.addEventListener("click", deleteUser));
+deleteButton.forEach(button => button.addEventListener("click", deleteUser));
