@@ -1,7 +1,6 @@
-<script type="text/javascript" src="./public/js/mobileNavigation.js"></script>
 <nav>
     <div class="logo-container">
-        <img class="logo" src="public/img/logo.svg" onclick="window.location='/sets'">
+        <img class="logo" src="public/img/logo.png" onclick="window.location='/sets'">
     </div>
     <div class="user-container">
         <img class="user" src="public/img/user.png">
@@ -12,7 +11,7 @@
             <a href="/sets">Sets</a>
         </li>
         <li>
-            <a href="/addSet">Add set</a>
+            <a href="/addSet">AddSet</a>
         </li>
         <?php
         if ($_SESSION['role'] == 'admin') {

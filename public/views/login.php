@@ -13,7 +13,7 @@
 <div class="container">
 
     <div class="logo-container">
-        <img class="logo" src="public/img/logo.svg">
+        <img class="logo" src="public/img/logo.png">
     </div>
 
     <div class="login-container">

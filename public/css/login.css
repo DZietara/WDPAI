@@ -87,9 +87,9 @@ input {
     font-weight: bold;
 }
 
-input::placeholder {          
+input::placeholder {
     font-weight: 400;
-} 
+}
 
 #login-button {
     background-color: #3067E6;
@@ -134,7 +134,7 @@ input::placeholder {
 }
 
 @media only screen and (max-device-width: 600px) {
-    
+
     * {
         font-size: 36px;
     }
@@ -162,12 +162,12 @@ input::placeholder {
     .message {
         width: 80%;
     }
-    
+
     #hello {
         font-weight: bold;
         font-size: 0.8em;
     }
-    
+
     #hello2 {
         font-size: 0.5em;
         margin-top: 2%;
