@@ -12,7 +12,7 @@
             <a href="/sets">Sets</a>
         </li>
         <li>
-            <a href="/test">Test</a>
+            <a href="/addSet">Add set</a>
         </li>
         <?php
         if ($_SESSION['role'] == 'admin') {

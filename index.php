@@ -5,8 +5,6 @@ require 'Routing.php';
 $path = trim($_SERVER['REQUEST_URI'], '/');
 $path = parse_url($path, PHP_URL_PATH);
 
-Router::get('test', 'DefaultController');
-
 Router::get('sets', 'SetsController');
 Router::post('addSet', 'SetsController');
 Router::get('deleteSet', 'SetsController');

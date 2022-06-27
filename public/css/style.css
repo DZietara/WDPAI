@@ -189,12 +189,6 @@ section::-webkit-scrollbar {
     font-weight: bold;
 }
 
-.category-terms {
-    margin-left: 10%;
-    font-size: 0.6em;
-    margin-top: -6%;
-}
-
 #delete-button {
     width: 30%;
     background-color: #3067E6;
@@ -289,7 +283,7 @@ td {
     color: red;
 }
 
-@media only screen and (max-device-width: 600px)  {
+@media only screen and (max-device-width: 920px)  {
     .base-container {
         flex-direction: column;
     }
@@ -369,11 +363,6 @@ td {
     .flashcard-category {
         margin-top: 6%;
         font-size: 1em;
-    }
-
-    .category-terms {
-        font-size: 0.9em;
-        margin-top: 0;
     }
 
     #delete-button {

@@ -48,8 +48,6 @@ function createSet(set) {
     div.addEventListener("click", showCards);
     const name = clone.querySelector(".flashcard-category");
     name.innerHTML = set.name;
-    const terms = clone.querySelector(".category-terms");
-    terms.innerHTML = "x terms";
     const bt = clone.querySelector("#delete-button");
     bt.addEventListener("click", deleteSet);
     setContainer.appendChild(clone);

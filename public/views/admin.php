@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <script type="text/javascript" src="./public/js/user.js" defer></script>
     <script src="https://kit.fontawesome.com/ad3f96515e.js" crossorigin="anonymous"></script>
     <title>eFlashcards</title>

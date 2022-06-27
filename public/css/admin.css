@@ -32,7 +32,7 @@ form {
     line-height: 2em;
 }
 
-@media only screen and (max-device-width: 600px)  {
+@media only screen and (max-device-width: 920px)  {
 
     .users {
         margin: 0 auto;
@@ -47,8 +47,9 @@ form {
         line-height: 2em;
     }
 
-    .del {
-        margin: 6% auto 0;
+    #delete-button.del {
+        width: 30%;
+        font-size: 0.9em;
+        margin: 0 auto 0;
     }
 }
-

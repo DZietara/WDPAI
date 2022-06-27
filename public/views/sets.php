@@ -29,7 +29,6 @@
             <?php foreach ($sets as $set): ?>
                 <div class="flashcard" id="<?= $set->getId(); ?>">
                     <span class="flashcard-category"><?= $set->getName(); ?></span>
-                    <span class="category-terms">x terms</span>
                     <button id="delete-button">delete</button>
                 </div>
             <?php endforeach; ?>
@@ -43,7 +42,6 @@
 <template id="set-template">
     <div class="flashcard" id="">
         <span class="flashcard-category">category</span>
-        <span class="category-terms">x terms</span>
         <button id="delete-button">delete</button>
     </div>
 </template>
