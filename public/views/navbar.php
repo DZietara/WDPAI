@@ -1,7 +1,7 @@
 <script type="text/javascript" src="./public/js/mobileNavigation.js"></script>
 <nav>
     <div class="logo-container">
-        <img class="logo" src="public/img/logo.svg">
+        <img class="logo" src="public/img/logo.svg" onclick="window.location='/sets'">
     </div>
     <div class="user-container">
         <img class="user" src="public/img/user.png">

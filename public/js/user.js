@@ -2,25 +2,24 @@ const search = document.querySelector('input[placeholder="search user"]');
 const userContainer = document.querySelector(".section-container");
 const deleteButton = document.querySelectorAll("#delete-button");
 
-search.addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
+search.addEventListener("keyup", async function (event) {
+    event.preventDefault();
+    await new Promise(r => setTimeout(r, 500));
 
-        const data = {search: this.value};
+    const data = {search: this.value};
 
-        fetch("/searchUser", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        }).then(function (response) {
-            return response.json();
-        }).then(function (users) {
-            userContainer.innerHTML = "";
-            loadUsers(users)
-        });
-    }
+    fetch("/searchUser", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(function (response) {
+        return response.json();
+    }).then(function (users) {
+        userContainer.innerHTML = "";
+        loadUsers(users)
+    });
 });
 
 function loadUsers(users) {
