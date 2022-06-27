@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <script type="text/javascript" src="./public/js/user.js" defer></script>
     <script src="https://kit.fontawesome.com/ad3f96515e.js" crossorigin="anonymous"></script>
-    <title>eFlashcards</title>
+    <title>eFlashcard</title>
 </head>
 
 <body>

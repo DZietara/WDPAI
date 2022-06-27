@@ -7,10 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/card.css">
-    <script type="text/javascript" src="./public/js/search.js" defer></script>
-    <script type="text/javascript" src="./public/js/deleteSet.js" defer></script>
     <script src="https://kit.fontawesome.com/ad3f96515e.js" crossorigin="anonymous"></script>
-    <title>eFlashcards</title>
+    <title>eFlashcard</title>
 </head>
 
 <body>

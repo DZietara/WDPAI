@@ -12,6 +12,7 @@ class Card
         $this->question = $question;
         $this->answer = $answer;
         $this->id = $id;
+        $this->id_set = $id_set;
     }
 
     public function getQuestion(): string

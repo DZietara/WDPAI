@@ -23,14 +23,6 @@ search.addEventListener("keyup", async function (event) {
     });
 });
 
-function delay(fn, ms) {
-    let timer = 0
-    return function(...args) {
-        clearTimeout(timer)
-        timer = setTimeout(fn.bind(this, ...args), ms || 0)
-    }
-}
-
 function loadSets(sets) {
     sets.forEach(set => {
         console.log(set);
