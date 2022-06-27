@@ -38,8 +38,9 @@ class SetRepository extends Repository
 
     public function getAllSetsByUser(): array
     {
+        // VIEW
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.sets WHERE id_user = :id_user
+            SELECT * FROM all_sets_by_user WHERE id_user = :id_user
         ');
 
         $id_user = $_SESSION["userid"];

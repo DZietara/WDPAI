@@ -31,9 +31,8 @@ class UserRepository extends Repository
 
     public function getAllUsers(): array
     {
-        // view
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM all_users 
+            SELECT * FROM public.users
         ');
         $stmt->execute();
         $allUsers = $stmt->fetchAll(PDO::FETCH_ASSOC);

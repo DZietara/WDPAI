@@ -27,7 +27,10 @@ class CardRepository extends Repository
     public function getAllCardsBySetId($id_set): array
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.cards WHERE id_set = :id_set
+            SELECT * FROM public.users u
+            INNER JOIN public.sets s ON u.id = s.id_user
+            INNER JOIN public.cards c ON s.id = c.id_set
+            WHERE id_set = :id_set
         ');
 
         $stmt->bindParam(':id_set', $id_set, PDO::PARAM_INT);
