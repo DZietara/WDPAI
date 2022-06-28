@@ -12,6 +12,7 @@ Router::post('search', 'SetsController');
 Router::get('card', 'CardsController');
 
 Router::get('register', 'SecurityController');
+Router::post('', 'SecurityController');
 Router::post('login', 'SecurityController');
 Router::post('logout', 'SecurityController');
 Router::get('admin', 'SecurityController');

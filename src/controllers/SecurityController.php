@@ -18,6 +18,11 @@ class SecurityController extends AppController
         $this->roleRepository = new RoleRepository();
     }
 
+    public function index()
+    {
+        $this->render('login');
+    }
+
     public function login()
     {
         session_start();
